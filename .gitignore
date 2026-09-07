@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# Do not commit the commercial textbook PDF.
+Calculus Early Transcendentals, Metric Edition (9e).pdf
+resources/textbooks/*.pdf
+
