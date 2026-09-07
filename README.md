@@ -19,6 +19,7 @@
 - [授課教師課程網站](https://catalin-carstea.github.io/courses/calculus1-2026.html)
 - [陽明交大微積分小組 9E 共同習題](https://calculus.math.nycu.edu.tw/calculusmath/ch/app/artwebsite/view?module=artwebsite&id=39529&serno=3e458c4c-38ac-4e7a-b6c2-4499670c07ba)
 - [完整課程地圖](課程地圖.md)
+- [課程網站最新資訊（每日自動更新）](course-updates.md)
 
 ## 倉庫導覽
 
@@ -45,4 +46,3 @@
 ## 教材與著作權
 
 本倉庫不收錄未獲授權的整本商業課本或其他受著作權保護的教材。商業課本只記錄書目資訊；老師講義、作業與考題是否上傳，須依授課教師、學校與著作權規定辦理。
-

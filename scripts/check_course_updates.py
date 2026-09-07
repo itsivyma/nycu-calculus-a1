@@ -23,6 +23,7 @@ COMMON_EXERCISES_URL = (
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "monitor" / "course-websites.json"
 REPORT_PATH = ROOT / "monitor" / "latest-change.md"
+CURRENT_PATH = ROOT / "course-updates.md"
 
 
 def fetch(url: str) -> str:
@@ -49,7 +50,7 @@ def teacher_homework(page: str) -> str:
     )
     if not match:
         raise RuntimeError("找不到老師網站的 Homework 區塊")
-    return plain_text(match.group(1))
+    return re.sub(r"^Homework\s+", "", plain_text(match.group(1)), flags=re.I)
 
 
 def common_exercises(page: str) -> dict[str, str]:
@@ -137,6 +138,43 @@ def write_state(data: dict[str, object]) -> None:
     )
 
 
+def write_course_updates(data: dict[str, object]) -> None:
+    homework = str(data.get("teacher_homework", ""))
+    exercises = dict(data.get("common_exercises", {}))
+    checked_at = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime(
+        "%Y-%m-%d %H:%M Asia/Taipei"
+    )
+    rows = [
+        f"| {section} | {exercises[section]} |"
+        for section in sorted(exercises, key=section_key)
+    ]
+    content = "\n".join(
+        [
+            "# 課程網站最新資訊",
+            "",
+            "> 本頁由 GitHub Actions 自動產生，請勿手動編輯。",
+            "",
+            f"追蹤基準更新時間：{checked_at}",
+            "",
+            "## 老師網站 Homework 區",
+            "",
+            homework or "（目前沒有內容）",
+            "",
+            f"來源：{TEACHER_URL}",
+            "",
+            "## 微積分小組 9E 共同習題",
+            "",
+            "| 節次 | 題號 |",
+            "| --- | --- |",
+            *rows,
+            "",
+            f"來源：{COMMON_EXERCISES_URL}",
+            "",
+        ]
+    )
+    CURRENT_PATH.write_text(content, encoding="utf-8")
+
+
 def set_output(changed: bool) -> None:
     github_output = os.environ.get("GITHUB_OUTPUT")
     if github_output:
@@ -152,6 +190,7 @@ def main() -> int:
     current = snapshot()
     if args.initialize or not STATE_PATH.exists():
         write_state(current)
+        write_course_updates(current)
         print(f"Initialized {STATE_PATH.relative_to(ROOT)}")
         set_output(False)
         return 0
@@ -179,6 +218,7 @@ def main() -> int:
     )
     REPORT_PATH.write_text(report, encoding="utf-8")
     write_state(current)
+    write_course_updates(current)
     print(report)
     set_output(True)
     return 0
