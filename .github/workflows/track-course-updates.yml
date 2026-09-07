@@ -1,0 +1,44 @@
+name: Track course website updates
+
+on:
+  schedule:
+    # 10:00 UTC = 18:00 Asia/Taipei
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: course-website-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check course websites
+        id: monitor
+        run: python3 scripts/check_course_updates.py
+
+      - name: Notify through a GitHub issue
+        if: steps.monitor.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "微積分課程網站有新更新 $(date -u +%Y-%m-%d)" \
+            --body-file monitor/latest-change.md
+
+      - name: Save the new baseline
+        if: steps.monitor.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitor/course-websites.json monitor/latest-change.md
+          git commit -m "Track course website update"
+          git push
