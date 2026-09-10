@@ -2,11 +2,11 @@
 
 > 本頁由 GitHub Actions 自動產生，請勿手動編輯。
 
-追蹤基準更新時間：2026-09-07 17:09 Asia/Taipei
+追蹤基準更新時間：2026-09-10 21:54 Asia/Taipei
 
 ## 老師網站 Homework 區
 
-Homework assignments will be posted here as they are announced. Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
+Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html
 
