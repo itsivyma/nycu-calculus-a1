@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Track homework-related changes on the course websites."""
+"""Track course updates and download the teacher's lecture-note PDFs."""
 
 from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import html
 import json
 import os
@@ -12,6 +13,7 @@ import re
 import sys
 import urllib.request
 from pathlib import Path
+from urllib.parse import unquote, urljoin, urlparse
 
 
 TEACHER_URL = "https://catalin-carstea.github.io/courses/calculus1-2026.html"
@@ -24,6 +26,8 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "monitor" / "course-websites.json"
 REPORT_PATH = ROOT / "monitor" / "latest-change.md"
 CURRENT_PATH = ROOT / "course-updates.md"
+LECTURE_NOTES_DIR = ROOT / "course-materials" / "lecture-notes"
+MAX_PDF_BYTES = 50 * 1024 * 1024
 
 
 def fetch(url: str) -> str:
@@ -33,6 +37,20 @@ def fetch(url: str) -> str:
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def fetch_pdf(url: str) -> bytes:
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "nycu-calculus-a1-course-monitor/1.0"},
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        content = response.read(MAX_PDF_BYTES + 1)
+    if len(content) > MAX_PDF_BYTES:
+        raise RuntimeError(f"Lecture note exceeds 50 MiB: {url}")
+    if not content.startswith(b"%PDF-"):
+        raise RuntimeError(f"Lecture note is not a PDF: {url}")
+    return content
 
 
 def plain_text(fragment: str) -> str:
@@ -51,6 +69,45 @@ def teacher_homework(page: str) -> str:
     if not match:
         raise RuntimeError("找不到老師網站的 Homework 區塊")
     return re.sub(r"^Homework\s+", "", plain_text(match.group(1)), flags=re.I)
+
+
+def lecture_note_links(page: str) -> list[dict[str, str]]:
+    match = re.search(
+        r'<section\b[^>]*\bid=["\']lecture-notes["\'][^>]*>(.*?)</section>',
+        page,
+        flags=re.I | re.S,
+    )
+    if not match:
+        raise RuntimeError("找不到老師網站的 Lecture notes 區塊")
+
+    notes: list[dict[str, str]] = []
+    filenames: set[str] = set()
+    for attrs, label in re.findall(
+        r"<a\b([^>]*)>(.*?)</a>", match.group(1), flags=re.I | re.S
+    ):
+        href_match = re.search(r'\bhref=["\']([^"\']+)["\']', attrs, flags=re.I)
+        if not href_match:
+            continue
+        url = urljoin(TEACHER_URL, html.unescape(href_match.group(1)))
+        parsed = urlparse(url)
+        if parsed.scheme != "https" or parsed.netloc != urlparse(TEACHER_URL).netloc:
+            raise RuntimeError(f"Lecture note points to an unexpected host: {url}")
+        filename = unquote(Path(parsed.path).name)
+        if not filename.lower().endswith(".pdf"):
+            continue
+        if not re.fullmatch(r"[A-Za-z0-9._-]+\.pdf", filename, flags=re.I):
+            raise RuntimeError(f"Unsafe lecture-note filename: {filename}")
+        if filename in filenames:
+            raise RuntimeError(f"Duplicate lecture-note filename: {filename}")
+        filenames.add(filename)
+        notes.append(
+            {
+                "title": re.sub(r"\s*\(PDF\)\s*$", "", plain_text(label), flags=re.I),
+                "url": url,
+                "filename": filename,
+            }
+        )
+    return notes
 
 
 def common_exercises(page: str) -> dict[str, str]:
@@ -75,11 +132,22 @@ def common_exercises(page: str) -> dict[str, str]:
     return result
 
 
-def snapshot() -> dict[str, object]:
-    return {
-        "teacher_homework": teacher_homework(fetch(TEACHER_URL)),
-        "common_exercises": common_exercises(fetch(COMMON_EXERCISES_URL)),
-    }
+def snapshot() -> tuple[dict[str, object], dict[str, bytes]]:
+    teacher_page = fetch(TEACHER_URL)
+    notes = lecture_note_links(teacher_page)
+    assets: dict[str, bytes] = {}
+    for note in notes:
+        content = fetch_pdf(note["url"])
+        note["sha256"] = hashlib.sha256(content).hexdigest()
+        assets[note["filename"]] = content
+    return (
+        {
+            "teacher_homework": teacher_homework(teacher_page),
+            "lecture_notes": notes,
+            "common_exercises": common_exercises(fetch(COMMON_EXERCISES_URL)),
+        },
+        assets,
+    )
 
 
 def differences(old: dict[str, object], new: dict[str, object]) -> list[str]:
@@ -95,6 +163,38 @@ def differences(old: dict[str, object], new: dict[str, object]) -> list[str]:
                 f"- 更新前：{old_homework or '（空白）'}",
                 f"- 更新後：{new_homework or '（空白）'}",
                 f"- 來源：{TEACHER_URL}",
+                "",
+            ]
+        )
+
+    old_notes = {
+        str(note.get("url")): note
+        for note in old.get("lecture_notes", [])
+        if isinstance(note, dict)
+    }
+    new_notes = {
+        str(note.get("url")): note
+        for note in new.get("lecture_notes", [])
+        if isinstance(note, dict)
+    }
+    note_changes: list[str] = []
+    for url in sorted(set(old_notes) | set(new_notes)):
+        before = old_notes.get(url)
+        after = new_notes.get(url)
+        if before is None and after is not None:
+            note_changes.append(f"- 新增：**{after['title']}** (`{after['filename']}`)")
+        elif after is None and before is not None:
+            note_changes.append(f"- 網站已移除：**{before['title']}**（本地檔案保留）")
+        elif before != after and after is not None:
+            note_changes.append(f"- 更新：**{after['title']}** (`{after['filename']}`)")
+    if note_changes:
+        changes.extend(
+            [
+                "## 老師講義 Lecture notes 更新",
+                "",
+                *note_changes,
+                "",
+                f"來源：{TEACHER_URL}#lecture-notes",
                 "",
             ]
         )
@@ -138,8 +238,23 @@ def write_state(data: dict[str, object]) -> None:
     )
 
 
+def write_lecture_notes(assets: dict[str, bytes]) -> list[str]:
+    LECTURE_NOTES_DIR.mkdir(parents=True, exist_ok=True)
+    written: list[str] = []
+    for filename, content in assets.items():
+        destination = LECTURE_NOTES_DIR / filename
+        if destination.exists() and destination.read_bytes() == content:
+            continue
+        temporary = destination.with_suffix(destination.suffix + ".tmp")
+        temporary.write_bytes(content)
+        temporary.replace(destination)
+        written.append(filename)
+    return written
+
+
 def write_course_updates(data: dict[str, object]) -> None:
     homework = str(data.get("teacher_homework", ""))
+    notes = [note for note in data.get("lecture_notes", []) if isinstance(note, dict)]
     exercises = dict(data.get("common_exercises", {}))
     checked_at = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime(
         "%Y-%m-%d %H:%M Asia/Taipei"
@@ -148,6 +263,10 @@ def write_course_updates(data: dict[str, object]) -> None:
         f"| {section} | {exercises[section]} |"
         for section in sorted(exercises, key=section_key)
     ]
+    note_rows = [
+        f"- [{note['title']}](course-materials/lecture-notes/{note['filename']})"
+        for note in notes
+    ] or ["（目前沒有講義）"]
     content = "\n".join(
         [
             "# 課程網站最新資訊",
@@ -161,6 +280,12 @@ def write_course_updates(data: dict[str, object]) -> None:
             homework or "（目前沒有內容）",
             "",
             f"來源：{TEACHER_URL}",
+            "",
+            "## 老師講義 Lecture notes",
+            "",
+            *note_rows,
+            "",
+            f"來源：{TEACHER_URL}#lecture-notes",
             "",
             "## 微積分小組 9E 共同習題",
             "",
@@ -187,7 +312,8 @@ def main() -> int:
     parser.add_argument("--initialize", action="store_true")
     args = parser.parse_args()
 
-    current = snapshot()
+    current, lecture_assets = snapshot()
+    written_notes = write_lecture_notes(lecture_assets)
     if args.initialize or not STATE_PATH.exists():
         write_state(current)
         write_course_updates(current)
@@ -197,6 +323,15 @@ def main() -> int:
 
     previous = json.loads(STATE_PATH.read_text(encoding="utf-8"))
     changes = differences(previous, current)
+    if written_notes and not any("Lecture notes" in line for line in changes):
+        changes.extend(
+            [
+                "## 老師講義 Lecture notes 檔案補齊",
+                "",
+                *(f"- `{filename}`" for filename in written_notes),
+                "",
+            ]
+        )
     if not changes:
         print("No course website changes detected.")
         set_output(False)
@@ -209,7 +344,7 @@ def main() -> int:
         [
             "# 微積分課程網站更新",
             "",
-            "@itsivyma 偵測到課程題目或作業資訊變更。",
+            "@itsivyma 偵測到課程網站內容變更。",
             "",
             f"檢查時間：{checked_at}",
             "",

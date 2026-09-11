@@ -1,5 +1,19 @@
 {
   "teacher_homework": "Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
+  "lecture_notes": [
+    {
+      "title": "Lecture 1: Real numbers and exponentials",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-01-real-numbers-exponentials-student.pdf",
+      "filename": "lecture-01-real-numbers-exponentials-student.pdf",
+      "sha256": "a53acdbf172aa9280b9e2e420e95ccaa2bfcfbe68129ab0a01d049a9bbee2c14"
+    },
+    {
+      "title": "Lecture 2: Functions, inverses, and logarithms",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-02-functions-inverses-logarithms-student.pdf",
+      "filename": "lecture-02-functions-inverses-logarithms-student.pdf",
+      "sha256": "6bbea41922b67ebd05f033e629ad56a980e5b89749d90ecb01fc044126404c9c"
+    }
+  ],
   "common_exercises": {
     "1.4": "2, 9, 13, 17",
     "1.5": "18, 26, 30, 44, 58, 63, 74, 77, 81",

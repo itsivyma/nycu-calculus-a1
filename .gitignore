@@ -3,8 +3,9 @@
 .vscode/
 *.swp
 *.tmp
+__pycache__/
+tmp/
 
 # Do not commit the commercial textbook PDF.
 Calculus Early Transcendentals, Metric Edition (9e).pdf
 resources/textbooks/*.pdf
-
