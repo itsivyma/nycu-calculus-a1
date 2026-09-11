@@ -4,4 +4,4 @@
 
 ## 本次範圍
 
-- [Homework 1 完整教學：觀念、課本／Lecture Notes 對照、20 題詳解與共同勾選題](HW01/complete-guide.md)
+- [Homework 1 零基礎完整教學：符號入門、觀念、課本／Lecture Notes 對照、20 題詳解與共同勾選題](HW01/complete-guide.md)
