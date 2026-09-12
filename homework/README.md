@@ -4,4 +4,6 @@
 
 ## 本次範圍
 
-- [Homework 1 零基礎雙語完整教學：英文原題、中文翻譯、符號入門、20 題逐步詳解與共同勾選題](HW01/complete-guide.md)
+- [考前複習：符號入門、核心觀念與檢查表](HW01/review.md)
+- [Homework 1：英文原題、中文翻譯與 20 題逐步詳解](HW01/homework-solutions.md)
+- [微積分小組勾選題：英文原題、中文翻譯與逐步詳解](HW01/common-exercises.md)
