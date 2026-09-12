@@ -20,7 +20,7 @@
 - [陽明交大微積分小組 9E 共同習題](https://calculus.math.nycu.edu.tw/calculusmath/ch/app/artwebsite/view?module=artwebsite&id=39529&serno=3e458c4c-38ac-4e7a-b6c2-4499670c07ba)
 - [完整課程地圖](課程地圖.md)
 - [課程網站最新資訊（每日自動更新）](course-updates.md)
-- [Homework 1 零基礎完整教學（下次考試範圍）](homework/HW01/complete-guide.md)
+- [Homework 1 零基礎雙語完整教學（下次考試範圍）](homework/HW01/complete-guide.md)
 
 ## 倉庫導覽
 
