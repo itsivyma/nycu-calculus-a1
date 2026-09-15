@@ -2,11 +2,11 @@
 
 > 本頁由 GitHub Actions 自動產生，請勿手動編輯。
 
-追蹤基準更新時間：2026-09-11 20:00 Asia/Taipei
+追蹤基準更新時間：2026-09-15 10:44 Asia/Taipei
 
 ## 老師網站 Homework 區
 
-Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
+Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html
 
@@ -14,6 +14,7 @@ Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Stu
 
 - [Lecture 1: Real numbers and exponentials](course-materials/lecture-notes/lecture-01-real-numbers-exponentials-student.pdf)
 - [Lecture 2: Functions, inverses, and logarithms](course-materials/lecture-notes/lecture-02-functions-inverses-logarithms-student.pdf)
+- [Lecture 3: Limits](course-materials/lecture-notes/lecture-03-limits-student.pdf)
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html#lecture-notes
 
