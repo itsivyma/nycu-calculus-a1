@@ -1,5 +1,5 @@
 {
-  "teacher_homework": "Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
+  "teacher_homework": "Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
   "lecture_notes": [
     {
       "title": "Lecture 1: Real numbers and exponentials",
@@ -18,6 +18,12 @@
       "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-03-limits-student.pdf",
       "filename": "lecture-03-limits-student.pdf",
       "sha256": "7747c2f2ae3f641bae2ab24438cd80d1f9213d113450ebfd9da4a263a92215c5"
+    },
+    {
+      "title": "Lecture 4: Limit laws and non-existence of limits",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-04-limit-laws-nonexistence-student.pdf",
+      "filename": "lecture-04-limit-laws-nonexistence-student.pdf",
+      "sha256": "b0a56539c7ce9cc3eb9b6cb50e9b69c4f682e18e2c83ab4f4f60e001f5c3d7aa"
     }
   ],
   "common_exercises": {
