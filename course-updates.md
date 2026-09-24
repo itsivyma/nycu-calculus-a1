@@ -2,11 +2,11 @@
 
 > 本頁由 GitHub Actions 自動產生，請勿手動編輯。
 
-追蹤基準更新時間：2026-09-22 00:03 Asia/Taipei
+追蹤基準更新時間：2026-09-24 22:29 Asia/Taipei
 
 ## 老師網站 Homework 區
 
-Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
+Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html
 
@@ -17,6 +17,7 @@ Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages H
 - [Lecture 3: Limits](course-materials/lecture-notes/lecture-03-limits-student.pdf)
 - [Lecture 4: Limit laws and non-existence of limits](course-materials/lecture-notes/lecture-04-limit-laws-nonexistence-student.pdf)
 - [Lecture 5: Continuity](course-materials/lecture-notes/lecture-05-continuity-student.pdf)
+- [Lecture 6: Limits and derivatives](course-materials/lecture-notes/lecture-06-limits-derivatives-student.pdf)
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html#lecture-notes
 
