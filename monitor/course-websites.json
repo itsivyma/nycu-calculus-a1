@@ -1,5 +1,5 @@
 {
-  "teacher_homework": "Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
+  "teacher_homework": "Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
   "lecture_notes": [
     {
       "title": "Lecture 1: Real numbers and exponentials",
@@ -36,6 +36,12 @@
       "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-06-limits-derivatives-student.pdf",
       "filename": "lecture-06-limits-derivatives-student.pdf",
       "sha256": "f834d31e07ee69875dbcc5e4ff64eebf8bcd29038da48b8d2f00877cb8d81152"
+    },
+    {
+      "title": "Lecture 7: Differentiation rules",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-07-differentiation-rules-student.pdf",
+      "filename": "lecture-07-differentiation-rules-student.pdf",
+      "sha256": "d69f1a0f4f8312c130f8ab853c5560914bb7fd9ce03dba2e91e683ef32a97f0b"
     }
   ],
   "common_exercises": {
