@@ -1,5 +1,5 @@
 {
-  "teacher_homework": "Homework 7 (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
+  "teacher_homework": "Homework 8 (PDF) For Monday, October 12, 2026 · Lecture 9 · 4 pages Homework 7 (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
   "lecture_notes": [
     {
       "title": "Lecture 1: Real numbers and exponentials",
@@ -48,6 +48,12 @@
       "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-08-chain-rule-implicit-differentiation-student.pdf",
       "filename": "lecture-08-chain-rule-implicit-differentiation-student.pdf",
       "sha256": "add98b28171955da20b53a538c2b9e2e9d7884a0d978de6ba7212addc03716c3"
+    },
+    {
+      "title": "Lecture 9: Derivatives, linear approximation, and extrema",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-09-derivatives-linear-approximation-extrema-student.pdf",
+      "filename": "lecture-09-derivatives-linear-approximation-extrema-student.pdf",
+      "sha256": "52d73ab76f113ce37d36546951ae6024682be01a47f1f51358b79180346d293a"
     }
   ],
   "common_exercises": {
