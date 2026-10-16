@@ -2,11 +2,11 @@
 
 > 本頁由 GitHub Actions 自動產生，請勿手動編輯。
 
-追蹤基準更新時間：2026-10-13 03:27 Asia/Taipei
+追蹤基準更新時間：2026-10-16 10:31 Asia/Taipei
 
 ## 老師網站 Homework 區
 
-Homework 9 (PDF) For Thursday, October 15, 2026 · Lecture 10 · 4 pages Homework 8 (PDF) For Monday, October 12, 2026 · Lecture 9 · 4 pages Homework 7 (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
+Homework 10 (PDF) For Monday, October 19, 2026 · Lecture 11 · 4 pages Homework 9 (PDF) For Thursday, October 15, 2026 · Lecture 10 · 4 pages Homework 8 (PDF) For Monday, October 12, 2026 · Lecture 9 · 4 pages Homework 7 (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html
 
@@ -22,6 +22,7 @@ Homework 9 (PDF) For Thursday, October 15, 2026 · Lecture 10 · 4 pages Homewor
 - [Lecture 8: Chain rule, implicit differentiation, and inverse functions](course-materials/lecture-notes/lecture-08-chain-rule-implicit-differentiation-student.pdf)
 - [Lecture 9: Derivatives, linear approximation, and extrema](course-materials/lecture-notes/lecture-09-derivatives-linear-approximation-extrema-student.pdf)
 - [Lecture 10: Extrema and the Mean Value Theorem](course-materials/lecture-notes/lecture-10-extrema-mean-value-theorem-student.pdf)
+- [Lecture 11: Derivative tests and concavity](course-materials/lecture-notes/lecture-11-derivative-tests-concavity-student.pdf)
 
 來源：https://catalin-carstea.github.io/courses/calculus1-2026.html#lecture-notes
 
