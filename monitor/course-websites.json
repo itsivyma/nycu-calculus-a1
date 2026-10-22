@@ -1,5 +1,5 @@
 {
-  "teacher_homework": "Homework 11 (PDF) For Thursday, October 22, 2026 · Lecture 12 · 4 pages Homework 10 (PDF) For Monday, October 19, 2026 · Lecture 11 · 4 pages Homework 9 (PDF) For Thursday, October 15, 2026 · Lecture 10 · 4 pages Homework 8 (PDF) For Monday, October 12, 2026 · Lecture 9 · 4 pages Homework 7 (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
+  "teacher_homework": "Homework 12 (PDF) Due Monday, November 2, 2026 · Lecture 13 · 4 pages Homework 11 (PDF) · Solutions (PDF) For Thursday, October 22, 2026 · Lecture 12 · 4 pages Homework 10 (PDF) · Solutions (PDF) For Monday, October 19, 2026 · Lecture 11 · 4 pages Homework 9 (PDF) · Solutions (PDF) For Thursday, October 15, 2026 · Lecture 10 · 4 pages Homework 8 (PDF) · Solutions (PDF) For Monday, October 12, 2026 · Lecture 9 · 4 pages Homework 7 (PDF) · Solutions (PDF) For Thursday, October 8, 2026 · Lecture 8 · 4 pages Homework 6 (PDF) · Solutions (PDF) For Monday, October 5, 2026 · Lecture 7 · 3 pages Homework 5 (PDF) · Solutions (PDF) For Thursday, October 1, 2026 · Lecture 6 · 3 pages Homework 4 (PDF) · Solutions (PDF) For Thursday, September 24, 2026 · Lectures 1–5 · 3 pages Homework 3 (PDF) · Solutions (PDF) For Monday, September 21, 2026 · Lectures 3–4 · 3 pages Homework 2 (PDF) · Solutions (PDF) Due Thursday, September 17, 2026 · Lecture 3 · 2 pages Homework 1 (PDF) · Solutions (PDF) Due Monday, September 14, 2026 · Lectures 1–2 · 3 pages Students are strongly encouraged to work through all assigned problems and to do additional exercises whenever a topic is not yet comfortable. Regular practice is essential in this course. Homework is the main preparation for quizzes and midterms; exam and quiz problems may be drawn from, or closely related to, assigned homework.",
   "lecture_notes": [
     {
       "title": "Lecture 1: Real numbers and exponentials",
@@ -72,6 +72,12 @@
       "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-12-curve-sketching-lhospital-student.pdf",
       "filename": "lecture-12-curve-sketching-lhospital-student.pdf",
       "sha256": "c606926984f2b8bccb8e5977112ba928559ff59a8ec469972c18ff48ae677614"
+    },
+    {
+      "title": "Lecture 13: Antiderivatives and the definite integral",
+      "url": "https://catalin-carstea.github.io/courses/calculus1-2026/lecture-13-antiderivatives-definite-integral-student.pdf",
+      "filename": "lecture-13-antiderivatives-definite-integral-student.pdf",
+      "sha256": "6a14c07d4f3a22068556d66f11a37b497b2c0eddfeadf0ab946c394feff30959"
     }
   ],
   "common_exercises": {
